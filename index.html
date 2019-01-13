@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>New York Times article API</title>
+</head>
+
+<body class="bg-dark">
+    <div class="wrapper container">
+        <div class="text-center jumbotron bg-primary">
+            <h1 class="text-white">New York Times Search!</h1>
+        </div>
+        <section class="card bg-secondary text-white">
+            <h5 class="card-header">
+                Search For Articles
+            </h5>
+            <div class="card-body">
+                <form id="articleForm">
+
+                    <div class="form-group">
+                        <label>Search for Article Topic</label>
+                        <input type="text" class="form-control bg-dark text-white border-dark" id="topic" placeholder="E.g. Current Affairs">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="articleNumberSelector">Number of Articles to Retrieve? (up to 10)</label>
+                        <select class="form-control bg-dark border-dark text-white" id="numArticleSelector">
+                            <option class="bg-dark">1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startYear">Start Year (optional)</label>
+                        <input type="text" class="form-control bg-dark text-white border-dark" id="startYear" placeholder="Year Start e.g. 1990" pattern="[0-9]{4}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startYear">End Year (optional)</label>
+                        <input type="text" class="form-control bg-dark text-white border-dark" id="endYear" placeholder="Year End e.g. 1999" pattern="[0-9]{4}">
+                    </div>
+
+                    <button class="btn btn-primary btn-lg"  type="submit" id="articleSearch">Search Articles!</button>
+                    <button class="btn btn-secondary btn-lg border-dark"  type="submit" id="articleSearch">Clear Results</button>
+
+                </form>
+
+            </div>
+        </section>
+        <section class="card text-white bg-secondary">
+            <h5 class="card-header">Article List</h5>
+            <div class="card-body" id="articleDump">
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+        <script type='text/javascript' src='config.js'></script>
+    <script src="assets/javascript/logic.js"></script>
+</body>
+
+</html>

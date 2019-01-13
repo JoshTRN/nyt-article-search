@@ -1,0 +1,12 @@
+input::-webkit-input-placeholder{
+    color: blue;
+
+}
+
+.card {
+    margin-bottom: 2rem;
+}
+
+.text-white {
+    color: #FCF8DC
+}
