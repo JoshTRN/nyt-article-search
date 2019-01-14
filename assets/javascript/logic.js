@@ -97,5 +97,9 @@ $('#articleSearch').click(function (event) {
         document.querySelector('#articleForm').reportValidity()
     }
 
+    $('#clear').click(function (event) {
+        event.preventDefault();
+        $('#articleDump').empty();
+    })
 
 })
