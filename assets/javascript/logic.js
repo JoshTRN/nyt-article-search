@@ -25,9 +25,54 @@ function buildQueryURL() {
     if (parseInt(yearEnd)) {
         params.end_date = yearEnd + '1231';
     }
-
+    console.log(baseURL + $.param(params))
     return baseURL + $.param(params);
 
+}
+
+function updatePage(data) {
+
+    $('#articleDump').empty();
+
+    const articles = data.response.docs;
+
+    const numArticles = document.querySelector('#numArticleSelector').value.trim();
+
+    const articleList = $('<ul class="list-group">');
+
+    for (let i = 0; i < numArticles; i++) {
+
+        let article = articles[i];
+        let articleNum = i+1
+        let li = $('<li class=" bg-dark list-group-item">');
+
+        //headline
+        //byline
+        //articlelink
+        //publication date
+        
+        if (article.headline && article.headline.main) {
+            
+            li.append(  `<h3 class="headline">
+                            <span class="label label-primary">${articleNum}</span>
+                            <a href="${article.web_url}">${article.headline.main}</a>
+                         <h3>`);
+        }
+
+        if (article.byline && article.byline.original) {
+            li.append(`<i>${article.byline.original}</i>`);
+        }
+
+        if (article.snippet) {
+            li.append(`<blockquote><i>"${article.snippet}"</i></blockquote>`)
+        }
+
+        articleList.append(li);
+    }
+
+    $('#articleDump').append(articleList);
+
+    console.log(articles);
 }
 
 
@@ -46,6 +91,7 @@ $('#articleSearch').click(function (event) {
             .then(function (res) {
                 return res.json();
             })
+            // update the page
             .then(updatePage);
     } else {
         document.querySelector('#articleForm').reportValidity()
